@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--
+  بلا حدود للاستقدام — landing page, PHOTO-FORWARD redesign.
+  Neutral premium UI (off-white + charcoal + champagne gold); the PHOTOGRAPHY carries the warmth.
+  Images are licensed-free stock (Unsplash/Pexels) as PLACEHOLDERS — swap for the office's own
+  photos of real workers / families / homes. Self-contained, no build step, Arabic-RTL.
+-->
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بلا حدود للاستقدام · بيتك في أيدٍ أمينة</title>
+<meta name="description" content="شركة بلا حدود للاستقدام — نخبة الكفاءات المنزلية من حول العالم، بثقةٍ وسرعةٍ وتوثيقٍ كامل عبر مساند. معنا، بيتك في أيدٍ أمينة.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+<style>
+:root{
+  --paper:#faf7f1;--paper2:#f2ece0;--surface:#ffffff;--dark:#1b1813;--dark2:#262119;
+  --ink:#1d1a15;--ink2:#574f45;--ink3:#8d8478;
+  --gold:#b6883c;--gold2:#9a7330;--gold-soft:#f1e7cf;
+  --line:#e8e0d1;--wa:#1fab57;
+  --display:'El Messiri',serif;--body:'Tajawal',sans-serif;--maxw:1200px;
+  --r:14px;--r-lg:22px;--r-xl:30px;--pill:999px;
+  --sh-1:0 6px 22px -10px rgba(29,26,21,.16);--sh-2:0 30px 70px -26px rgba(29,26,21,.36);
+  --ease:cubic-bezier(.2,.7,.2,1);--spring:cubic-bezier(.34,1.4,.64,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.22;margin:0;color:var(--ink)}
+p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:2}
+.num{font-feature-settings:"tnum"}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;padding:14px 26px;border-radius:var(--pill);cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--spring),box-shadow .25s,background .25s,color .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn--dark{background:var(--ink);color:var(--paper)}.btn--dark:hover{background:#000}
+.btn--gold{background:linear-gradient(135deg,#c79a48,var(--gold2));color:#fff;box-shadow:0 12px 30px -12px rgba(154,115,48,.5)}
+.btn--out{background:transparent;border-color:var(--line);color:var(--ink)}.btn--out:hover{border-color:var(--gold);color:var(--gold2);background:#fff}
+.btn--light{background:#fff;color:var(--ink);box-shadow:var(--sh-1)}
+.btn--ghostlight{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.btn .ico{width:18px;height:18px}
+/* header */
+.hdr{position:sticky;top:0;z-index:40;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.stuck{background:rgba(250,247,241,.9);backdrop-filter:saturate(1.4) blur(14px);border-color:var(--line);box-shadow:var(--sh-1)}
+.hdr__in{display:flex;align-items:center;gap:18px;height:76px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .logo{width:44px;height:44px;border-radius:13px;flex:none;display:grid;place-items:center;background:linear-gradient(140deg,#c79a48,var(--gold2));box-shadow:var(--sh-1)}
+.brand .logo svg{width:28px;height:28px;overflow:visible}.brand .logo svg path{fill:none;stroke:#fff;stroke-width:13;stroke-linecap:round}
+.brand b{font-family:var(--display);font-weight:700;font-size:20px;display:block;line-height:1.1}
+.brand small{font-size:11.5px;color:var(--ink3);letter-spacing:.05em}
+.nav{display:flex;gap:3px;margin-inline-start:auto}
+.nav a{padding:9px 14px;border-radius:var(--pill);color:var(--ink2);font-weight:500;font-size:15.5px;transition:.2s}
+.nav a:hover{color:var(--ink);background:var(--paper2)}
+.hdr__cta{display:flex;gap:10px;align-items:center}.hdr__cta .btn{padding:11px 20px;font-size:14.5px}
+.burger{display:none;width:46px;height:46px;border-radius:13px;border:1px solid var(--line);background:#fff;cursor:pointer;align-items:center;justify-content:center}
+.burger svg{width:22px;height:22px}
+@media(max-width:980px){.nav,.hdr__cta .btn--out{display:none}.burger{display:flex}}
+/* hero */
+.hero{padding:54px 0 70px;position:relative}
+.hero__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:var(--gold2);background:var(--gold-soft);padding:7px 15px;border-radius:var(--pill)}
+.eyebrow .st{color:var(--gold)}
+.hero h1{font-size:clamp(42px,6.2vw,72px);font-weight:700;letter-spacing:-.01em;margin:22px 0 0}
+.hero h1 .u{position:relative;white-space:nowrap}
+.hero h1 .u::after{content:"";position:absolute;inset-inline:-2px;bottom:6px;height:12px;background:var(--gold-soft);z-index:-1;border-radius:6px}
+.hero__lead{font-size:19.5px;color:var(--ink2);max-width:44ch;margin-top:22px}
+.hero__cta{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.hero__trust{display:flex;gap:14px;align-items:center;margin-top:28px;flex-wrap:wrap;color:var(--ink2);font-size:14.5px}
+.hero__trust b{color:var(--ink)}
+.hero__trust .av{display:flex}.hero__trust .av img{width:36px;height:36px;border-radius:50%;border:2px solid var(--paper);object-fit:cover;margin-inline-start:-10px}
+/* hero visual */
+.hero__visual{position:relative}
+.hero__photo{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-2);aspect-ratio:4/4.4;background:var(--paper2)}
+.hero__photo img{width:100%;height:100%;object-fit:cover}
+.hero__chip{position:absolute;background:#fff;border-radius:18px;box-shadow:var(--sh-2);padding:14px 18px;display:flex;align-items:center;gap:12px}
+.hero__chip.c1{inset-block-start:24px;inset-inline-start:-26px}
+.hero__chip.c2{inset-block-end:26px;inset-inline-end:-22px;flex-direction:column;align-items:flex-start;gap:3px}
+.hero__chip .ring{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--gold-soft);color:var(--gold2);flex:none}
+.hero__chip .ring svg{width:22px;height:22px}
+.hero__chip .v{font-family:var(--display);font-weight:700;font-size:22px;line-height:1}
+.hero__chip .l{font-size:12.5px;color:var(--ink3)}
+.hero__chip .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+@media(max-width:880px){.hero__grid{grid-template-columns:1fr;gap:34px}.hero__chip.c1{inset-inline-start:10px}.hero__chip.c2{inset-inline-end:10px}}
+/* trust strip */
+.logos{border-block:1px solid var(--line);background:var(--surface)}
+.logos__in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;flex-wrap:wrap}
+.logos span{display:inline-flex;align-items:center;gap:9px;color:var(--ink3);font-weight:600;font-size:15px}
+.logos svg{width:18px;height:18px;color:var(--gold)}
+/* sections */
+.sec{padding:96px 0}
+.sec__head{max-width:660px;margin-bottom:48px}
+.sec__head.center{margin-inline:auto;text-align:center}
+.kick{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);font-weight:700;font-size:14px;letter-spacing:.03em}
+.kick::before{content:"∞";font-size:18px}
+.sec h2{font-size:clamp(29px,4.3vw,45px);margin-top:13px}
+.sub{color:var(--ink2);font-size:18.5px;margin-top:14px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc__card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 28px;transition:transform .35s var(--spring),box-shadow .35s,border-color .35s}
+.svc__card:hover{transform:translateY(-8px);box-shadow:var(--sh-2);border-color:transparent}
+.svc__ico{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;margin-bottom:20px;background:var(--gold-soft);color:var(--gold2)}
+.svc__ico svg{width:29px;height:29px}
+.svc__card h3{font-size:24px;margin-bottom:9px}.svc__card p{color:var(--ink2);font-size:16px}
+.svc__card .more{display:inline-flex;align-items:center;gap:7px;margin-top:18px;color:var(--gold2);font-weight:700;font-size:15px}
+.svc__card .more svg{width:16px;height:16px;transition:transform .25s}.svc__card:hover .more svg{transform:translateX(-5px)}
+/* feature band (image + text) */
+.feat{background:var(--surface);border-block:1px solid var(--line)}
+.feat__in{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.feat__img{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-2);aspect-ratio:5/4}
+.feat__img img{width:100%;height:100%;object-fit:cover}
+.feat__list{margin-top:26px;display:flex;flex-direction:column;gap:16px}
+.feat__li{display:flex;gap:14px;align-items:flex-start}
+.feat__li .ck{width:30px;height:30px;border-radius:9px;background:var(--gold-soft);color:var(--gold2);display:grid;place-items:center;flex:none}
+.feat__li .ck svg{width:17px;height:17px}
+.feat__li b{display:block;font-size:17px}.feat__li span{color:var(--ink2);font-size:15.5px}
+@media(max-width:880px){.feat__in{grid-template-columns:1fr;gap:30px}}
+/* worker showcase (photo cards) */
+.work{background:var(--paper2)}
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.wcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .35s var(--spring),box-shadow .35s}
+.wcard:hover{transform:translateY(-8px);box-shadow:var(--sh-2)}
+.wcard__photo{aspect-ratio:1/1.05;overflow:hidden;position:relative;background:var(--paper2)}
+.wcard__photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s var(--ease)}
+.wcard:hover .wcard__photo img{transform:scale(1.05)}
+.wcard__flag{position:absolute;inset-block-start:12px;inset-inline-end:12px;width:30px;height:22px;border-radius:4px;background-size:cover!important;box-shadow:0 3px 8px rgba(0,0,0,.3);border:1.5px solid #fff}
+.wcard__b{padding:18px}
+.wcard__nm{font-family:var(--display);font-weight:600;font-size:20px}
+.wcard__role{color:var(--ink3);font-size:14px;margin-bottom:12px}
+.wcard__row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--ink2);padding-top:10px;border-top:1px solid var(--line)}
+.wcard__row b{color:var(--ink)}
+.avtag{color:var(--gold);font-size:11px;line-height:1}
+.stars{color:var(--gold);letter-spacing:1px;font-size:13px}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.wgrid{grid-template-columns:1fr}}
+/* countries */
+.cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.country{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 12px;text-align:center;transition:transform .3s var(--spring),box-shadow .3s,border-color .3s}
+.country:hover{transform:translateY(-6px);box-shadow:var(--sh-1);border-color:var(--gold)}
+.country .fl{display:inline-block;width:54px;height:38px;border-radius:6px;background-size:cover!important;box-shadow:0 5px 12px -3px rgba(29,26,21,.3)}
+.country .nm{margin-top:11px;font-weight:600;color:var(--ink);font-size:15.5px}
+.country .role{color:var(--ink3);font-size:13px}
+@media(max-width:820px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:460px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+/* how (dark, image accent) */
+.how{background:var(--dark);color:#efe7d8;position:relative;overflow:hidden}
+.how .kick{color:var(--gold)}.how h2{color:#fff}.how .sub{color:#bdb3a2}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;margin-top:14px}
+.step__n{font-family:var(--display);font-weight:700;font-size:20px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#c79a48,var(--gold2));color:#fff;margin-bottom:18px;box-shadow:0 10px 24px -10px rgba(154,115,48,.6)}
+.step h3{font-size:20px;color:#fff;margin-bottom:7px}.step p{color:#bdb3a2;font-size:15.5px}
+.steps__line{position:absolute;top:27px;inset-inline:7%;height:2px;background:repeating-linear-gradient(90deg,rgba(182,136,60,.6) 0 8px,transparent 8px 18px)}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}.steps__line{display:none}}
+/* stats + testimonials */
+.statband{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:38px 20px;box-shadow:var(--sh-1);margin-bottom:54px}
+.stat{text-align:center}.stat+.stat{border-inline-start:1px solid var(--line)}
+.stat .v{font-family:var(--display);font-weight:700;font-size:clamp(34px,4vw,46px);color:var(--gold2);line-height:1}
+.stat .v small{font-size:.5em;color:var(--gold)}
+.stat .l{color:var(--ink2);font-size:15px;margin-top:7px}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;transition:transform .3s var(--spring),box-shadow .3s}
+.quote:hover{transform:translateY(-6px);box-shadow:var(--sh-1)}
+.quote .stars{margin-bottom:8px;display:block}
+.quote p{font-size:16.5px;color:var(--ink);line-height:1.8;margin-bottom:18px}
+.quote__who{display:flex;align-items:center;gap:12px}
+.quote__who img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.quote__nm{font-weight:700}.quote__city{color:var(--ink3);font-size:13.5px}
+@media(max-width:820px){.tgrid{grid-template-columns:1fr}.stat+.stat{border-inline-start:0}.statband{grid-template-columns:1fr 1fr;gap:24px 10px}}
+/* faq */
+.faq{max-width:840px;margin-inline:auto}
+.qa{border-bottom:1px solid var(--line)}
+.qa__q{width:100%;text-align:start;background:none;border:0;cursor:pointer;font-family:var(--display);font-weight:600;font-size:20px;color:var(--ink);padding:24px 4px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+.qa__q .pm{width:32px;height:32px;border-radius:50%;background:var(--gold-soft);color:var(--gold2);display:grid;place-items:center;flex:none;transition:.3s var(--spring);font-size:20px}
+.qa.open .qa__q .pm{transform:rotate(135deg);background:var(--ink);color:#fff}
+.qa__a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.qa__a p{color:var(--ink2);font-size:16.5px;padding:0 4px 24px}
+/* CTA image band */
+.cta{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-2)}
+.cta__bg{position:absolute;inset:0;z-index:0}.cta__bg img{width:100%;height:100%;object-fit:cover}
+.cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,17,13,.86),rgba(20,17,13,.55))}
+.cta__in{position:relative;z-index:2;padding:72px 44px;text-align:center;color:#fff}
+.cta__in h2{color:#fff;font-size:clamp(30px,4.6vw,48px)}
+.cta__in p{color:rgba(255,255,255,.9);font-size:19px;margin:15px auto 30px;max-width:52ch}
+.cta__row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+/* footer */
+.ft{background:var(--dark);color:#bdb3a2;padding:70px 0 28px;margin-top:8px}
+.ft__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:34px}
+.ft .brand b{color:#fff}.ft .brand small{color:#9a907f}.ft__grid>div>p{font-size:15px;color:#9a907f;line-height:1.9;margin-top:14px}
+.ft h4{font-family:var(--display);color:#fff;font-size:18px;margin-bottom:14px}
+.ft a{display:block;color:#bdb3a2;padding:6px 0;font-size:15px}.ft a:hover{color:var(--gold)}
+.ft__c div{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:15px}.ft__c svg{width:17px;height:17px;color:var(--gold);flex:none}
+.ft__bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding-top:22px;font-size:14px;color:#9a907f}.ft__bot .num{direction:ltr}
+@media(max-width:880px){.ft__grid{grid-template-columns:1fr 1fr}}
+/* fab */
+.fab{position:fixed;inset-block-end:24px;inset-inline-start:24px;z-index:50;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(31,171,87,.6);transition:transform .3s var(--spring)}
+.fab:hover{transform:scale(1.08)}.fab svg{width:30px;height:30px}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s var(--ease),transform .7s var(--spring)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
+/* mobile drawer */
+.mnav{position:fixed;inset:0;z-index:60;background:rgba(20,17,13,.5);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:.3s}
+.mnav.open{opacity:1;visibility:visible}
+.mnav__p{position:absolute;inset-block:0;inset-inline-end:0;width:min(320px,86vw);background:var(--paper);padding:26px;display:flex;flex-direction:column;gap:6px;transform:translateX(100%);transition:transform .35s var(--spring)}
+.mnav.open .mnav__p{transform:none}
+.mnav a{padding:14px 12px;border-radius:12px;font-family:var(--display);font-weight:600;font-size:19px}.mnav a:hover{background:var(--paper2)}
+.mnav__x{align-self:flex-start;background:none;border:0;cursor:pointer;font-size:30px;color:var(--ink2);margin-bottom:8px}
+</style></head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="بلا حدود">
+      <span class="logo"><svg viewBox="0 0 200 100"><path d="M50,50 C50,22 90,22 100,50 C110,78 150,78 150,50 C150,22 110,22 100,50 C90,78 50,78 50,50 Z"/></svg></span>
+      <span><b>بلا حدود</b><small>للاستقدام</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#services">خدماتنا</a><a href="#care">لماذا نحن</a><a href="#workers">الكفاءات</a>
+      <a href="#countries">الجنسيات</a><a href="#reviews">آراء العملاء</a><a href="#faq">الأسئلة</a>
+    </nav>
+    <div class="hdr__cta">
+      <a class="btn btn--out" href="tel:920009910">٩٢٠٠٠٩٩١٠</a>
+      <a class="btn btn--gold" href="https://wa.me/966500074595" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.319l-.999 3.648 3.909-1.266z"/></svg>
+        تواصل واتساب
+      </a>
+    </div>
+    <button class="burger" id="burger" aria-label="القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav"><div class="mnav__p">
+  <button class="mnav__x" id="mnavX">×</button>
+  <a href="#services">خدماتنا</a><a href="#care">لماذا نحن</a><a href="#workers">الكفاءات</a>
+  <a href="#countries">الجنسيات</a><a href="#reviews">آراء العملاء</a><a href="#faq">الأسئلة</a>
+  <a class="btn btn--gold" style="justify-content:center;margin-top:12px" href="https://wa.me/966500074595">تواصل واتساب</a>
+</div></div>
+
+<a id="top"></a>
+<!-- HERO -->
+<section class="hero"><div class="wrap hero__grid">
+  <div class="hero__copy">
+    <span class="eyebrow reveal"><span class="st">★★★★★</span> الأعلى تقييماً — أكثر من <span class="num">١٨٠</span> عميل</span>
+    <h1 class="reveal d1">معنا، بيتك في <span class="u">أيدٍ أمينة</span></h1>
+    <p class="hero__lead reveal d2">نختار لك نخبة الكفاءات المنزلية من حول العالم، ونتولّى كل إجراء بثقةٍ وعنايةٍ بلا حدود — وبتوثيقٍ كامل عبر مساند، من أول رسالة حتى استلام العامل عند بابك.</p>
+    <div class="hero__cta reveal d3">
+      <a class="btn btn--gold" href="https://wa.me/966500074595" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+        ابدأ الآن عبر واتساب
+      </a>
+      <a class="btn btn--out" href="#workers">استعرض الكفاءات</a>
+    </div>
+    <div class="hero__trust reveal d4">
+      <span class="av">
+        <img src="assets/img/av-1.jpg" alt="">
+        <img src="assets/img/w-et.jpg" alt="">
+        <img src="assets/img/w-lk.jpg" alt="">
+      </span>
+      <span><b>١٨٠+ عائلة سعودية</b> تثق بنا — مرخّصون ومتكاملون مع مساند</span>
+    </div>
+  </div>
+  <div class="hero__visual reveal d2">
+    <div class="hero__photo" data-par="-0.04">
+      <img src="assets/img/hero.jpg" alt="عناية منزلية موثوقة">
+    </div>
+    <div class="hero__chip c1">
+      <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <div><div class="v">موثّق</div><div class="l">عبر مساند وأبشر</div></div>
+    </div>
+    <div class="hero__chip c2">
+      <div class="stars">★★★★★</div><div class="v num">٤٫٩ / ٥</div><div class="l">رضا العملاء</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- TRUST STRIP -->
+<div class="logos"><div class="wrap logos__in">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> مرخّصة من وزارة الموارد البشرية</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v7l9 4 9-4V7"/></svg> متكاملة مع منصة مساند</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg> الدفع عبر سداد</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg> توثيق الهوية عبر أبشر</span>
+</div></div>
+
+<!-- SERVICES -->
+<section class="sec" id="services"><div class="wrap">
+  <div class="sec__head reveal"><span class="kick">خدماتنا</span><h2>كل ما يخص العمالة المنزلية، تحت سقفٍ واحد</h2><p class="sub">ثلاث خدمات متكاملة نديرها لك من البداية حتى النهاية، بإجراءاتٍ نظامية وشفافية كاملة.</p></div>
+  <div class="svc">
+    <article class="svc__card reveal d1"><div class="svc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg></div><h3>الاستقدام</h3><p>استقدام عاملات وعمّال من ٦ جنسيات مختارة، باختيارٍ دقيق وتوثيقٍ كامل للعقد والتأشيرة عبر مساند.</p><a class="more" href="https://wa.me/966500074595">اطلب استقدام <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m6-6l-6 6 6 6"/></svg></a></article>
+    <article class="svc__card reveal d2"><div class="svc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 3l4 4-4 4M21 7H7M7 21l-4-4 4-4M3 17h14"/></svg></div><h3>نقل الخدمات</h3><p>نقل كفالة عاملٍ موجود داخل المملكة بإجراءاتٍ سريعة عبر مساند وأبشر، ومتابعة موافقة الأطراف.</p><a class="more" href="https://wa.me/966500074595">اطلب نقل خدمات <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m6-6l-6 6 6 6"/></svg></a></article>
+    <article class="svc__card reveal d3"><div class="svc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>التأجير</h3><p>عمالة منزلية بعقود تأجيرٍ مرنة (شهرية أو طويلة) عبر برنامج أجير — حلٌّ سريع دون التزام الكفالة.</p><a class="more" href="https://wa.me/966500074595">اطلب تأجير <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m6-6l-6 6 6 6"/></svg></a></article>
+  </div>
+</div></section>
+
+<!-- FEATURE BAND -->
+<section class="feat sec" id="care"><div class="wrap feat__in">
+  <div class="feat__img reveal"><img src="assets/img/feature.jpg" alt="عناية واهتمام"></div>
+  <div class="reveal d1">
+    <span class="kick">لماذا بلا حدود</span>
+    <h2 style="margin-top:13px">عنايةٌ تثق بها، في كل تفصيل</h2>
+    <p class="sub" style="margin-top:12px">نتعامل مع بيتك كما لو كان بيتنا — اختيارٌ دقيق للكفاءة، وإجراءاتٌ موثّقة، ومتابعةٌ لا تتوقف.</p>
+    <div class="feat__list">
+      <div class="feat__li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>كفاءات مختارة بعناية</b><span>سير ذاتية موثّقة ومهارات حقيقية، نختارها لتناسب احتياج بيتك.</span></div></div>
+      <div class="feat__li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>إجراءات رسمية وشفافة</b><span>كل عقد وتأشيرة موثّقة عبر مساند، وتكاليف واضحة قبل البدء.</span></div></div>
+      <div class="feat__li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>ضمان واستبدال</b><span>فترة ضمانٍ بعد الاستلام مع حق الاستبدال وفق النظام لراحة بالك.</span></div></div>
+      <div class="feat__li"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>دعمٌ متواصل عبر واتساب</b><span>فريق يرافقك قبل الطلب وبعد الاستلام، على مدار الأسبوع.</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- WORKER SHOWCASE -->
+<section class="sec work" id="workers"><div class="wrap">
+  <div class="sec__head reveal"><span class="kick">أنواع الكفاءات</span><h2>كفاءاتٌ متاحة من ٦ جنسيات</h2><p class="sub">نماذج توضيحية لأنواع الكفاءات لدينا — تواصل معنا للاطلاع على السير الذاتية الفعلية واختيار الأنسب لبيتك.</p></div>
+  <div class="wgrid">
+    <article class="wcard reveal d1">
+      <div class="wcard__photo"><img src="assets/img/w-ph.jpg" alt="عاملة منزلية"><span class="wcard__flag fi fi-ph"></span></div>
+      <div class="wcard__b"><div class="wcard__nm">عاملة منزلية</div><div class="wcard__role">الفلبين</div>
+        <div class="wcard__row"><span>متاحة للطلب</span><span class="avtag">●</span></div></div>
+    </article>
+    <article class="wcard reveal d2">
+      <div class="wcard__photo"><img src="assets/img/w-et.jpg" alt="مربية أطفال"><span class="wcard__flag fi fi-et"></span></div>
+      <div class="wcard__b"><div class="wcard__nm">مربية أطفال</div><div class="wcard__role">إثيوبيا</div>
+        <div class="wcard__row"><span>متاحة للطلب</span><span class="avtag">●</span></div></div>
+    </article>
+    <article class="wcard reveal d3">
+      <div class="wcard__photo"><img src="assets/img/w-lk.jpg" alt="عاملة منزلية"><span class="wcard__flag fi fi-lk"></span></div>
+      <div class="wcard__b"><div class="wcard__nm">عاملة منزلية</div><div class="wcard__role">سريلانكا</div>
+        <div class="wcard__row"><span>متاحة للطلب</span><span class="avtag">●</span></div></div>
+    </article>
+    <article class="wcard reveal d4">
+      <div class="wcard__photo"><img src="assets/img/w-in.jpg" alt="سائق خاص"><span class="wcard__flag fi fi-in"></span></div>
+      <div class="wcard__b"><div class="wcard__nm">سائق خاص</div><div class="wcard__role">الهند</div>
+        <div class="wcard__row"><span>متاح للطلب</span><span class="avtag">●</span></div></div>
+    </article>
+  </div>
+  <p style="text-align:center;color:var(--ink3);font-size:13.5px;margin-top:18px" class="reveal">الصور المعروضة توضيحية لأنواع الكفاءات، وليست أشخاصاً محددين متاحين للحجز.</p>
+  <div style="text-align:center;margin-top:24px" class="reveal"><a class="btn btn--dark" href="https://wa.me/966500074595" target="_blank" rel="noopener">اطلب الاطلاع على السير الذاتية</a></div>
+</div></section>
+
+<!-- COUNTRIES -->
+<section class="sec" id="countries"><div class="wrap">
+  <div class="sec__head center reveal"><span class="kick" style="justify-content:center">جنسيات متنوعة</span><h2>من العالم إلى بيتك</h2><p class="sub">نخبة الكفاءات من الدول المصدّرة للعمالة المنزلية، نختارها لتناسب بيتك.</p></div>
+  <div class="cgrid reveal">
+    <div class="country"><span class="fl fi fi-ph"></span><div class="nm">الفلبين</div><div class="role">عاملات · مربيات</div></div>
+    <div class="country"><span class="fl fi fi-et"></span><div class="nm">إثيوبيا</div><div class="role">عاملات منزل</div></div>
+    <div class="country"><span class="fl fi fi-in"></span><div class="nm">الهند</div><div class="role">سائقون</div></div>
+    <div class="country"><span class="fl fi fi-lk"></span><div class="nm">سريلانكا</div><div class="role">عاملات منزل</div></div>
+    <div class="country"><span class="fl fi fi-ke"></span><div class="nm">كينيا</div><div class="role">عاملات منزل</div></div>
+    <div class="country"><span class="fl fi fi-bd"></span><div class="nm">بنغلاديش</div><div class="role">عمال · سائقون</div></div>
+  </div>
+</div></section>
+
+<!-- HOW (dark) -->
+<section class="sec how"><div class="wrap">
+  <div class="sec__head reveal"><span class="kick">كيف نعمل</span><h2>أربع خطوات، وبيتك في أيدٍ أمينة</h2><p class="sub">رحلةٌ واضحة تبدأ برسالة واتساب وتنتهي باستلام العامل عند بابك.</p></div>
+  <div class="steps">
+    <div class="steps__line"></div>
+    <div class="step reveal d1"><div class="step__n num">١</div><h3>اختر الكفاءة</h3><p>استعرض السير الذاتية واختر الأنسب لعائلتك.</p></div>
+    <div class="step reveal d2"><div class="step__n num">٢</div><h3>نوثّق العقد</h3><p>إجراءات رسمية عبر مساند وتكاليف واضحة مسبقاً.</p></div>
+    <div class="step reveal d3"><div class="step__n num">٣</div><h3>نتابع التأشيرة</h3><p>التأشيرة والفحص والسفر بتحديثٍ لحظي لكل مرحلة.</p></div>
+    <div class="step reveal d4"><div class="step__n num">٤</div><h3>نسلّمك بثقة</h3><p>استلام جاهز مع ضمانٍ وخدمة ما بعد الاستلام.</p></div>
+  </div>
+</div></section>
+
+<!-- STATS + TESTIMONIALS -->
+<section class="sec" id="reviews"><div class="wrap">
+  <div class="statband reveal">
+    <div class="stat"><div class="v"><span class="num" data-count="180">٠</span><small>+</small></div><div class="l">عميل يثق بنا</div></div>
+    <div class="stat"><div class="v"><span class="num" data-count="4.9" data-dec="1">٠</span><small>★</small></div><div class="l">متوسط التقييم</div></div>
+    <div class="stat"><div class="v"><span class="num" data-count="6">٠</span></div><div class="l">جنسيات مختارة</div></div>
+    <div class="stat"><div class="v num">٢٤<small>/٧</small></div><div class="l">دعم عبر واتساب</div></div>
+  </div>
+  <div class="sec__head center reveal"><span class="kick" style="justify-content:center">آراء عملائنا</span><h2>قصص ثقةٍ من بيوتٍ سعودية</h2></div>
+  <div class="tgrid">
+    <figure class="quote reveal d1"><span class="stars">★★★★★</span><p>تجربة مريحة من أولها لآخرها. اختاروا لي عاملة ممتازة ووصلت بأسرع مما توقعت، وكل الإجراءات واضحة عبر مساند.</p><figcaption class="quote__who"><img src="assets/img/t-1.jpg" alt=""><div><div class="quote__nm">أم عبدالله</div><div class="quote__city">الرياض</div></div></figcaption></figure>
+    <figure class="quote reveal d2"><span class="stars">★★★★★</span><p>أكثر ما أعجبني المتابعة المستمرة — كانوا يحدّثونني بكل خطوة على الواتساب حتى وصول السائق. تعامل راقٍ وموثوق.</p><figcaption class="quote__who"><img src="assets/img/t-2.jpg" alt=""><div><div class="quote__nm">سعد القحطاني</div><div class="quote__city">جدة</div></div></figcaption></figure>
+    <figure class="quote reveal d3"><span class="stars">★★★★★</span><p>جرّبت مكاتب كثيرة وهذا أفضلها. شفافية في التكاليف وسرعة في الإنجاز، والعاملة كانت كما وُصِفت تماماً.</p><figcaption class="quote__who"><img src="assets/img/w-lk.jpg" alt=""><div><div class="quote__nm">نورة العتيبي</div><div class="quote__city">الدمام</div></div></figcaption></figure>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
+  <div class="sec__head center reveal"><span class="kick" style="justify-content:center">الأسئلة الشائعة</span><h2>إجابات لأكثر ما يهمّك</h2></div>
+  <div class="faq">
+    <div class="qa reveal"><button class="qa__q">كم يستغرق الاستقدام عادةً؟<span class="pm">+</span></button><div class="qa__a"><p>تختلف المدة حسب الجنسية وجهة القدوم، وغالباً يتم الاستلام خلال فترةٍ قياسية بعد إصدار التأشيرة، مع متابعةٍ لحظية لكل مرحلة.</p></div></div>
+    <div class="qa reveal"><button class="qa__q">هل الإجراءات رسمية وموثّقة؟<span class="pm">+</span></button><div class="qa__a"><p>نعم. شركة بلا حدود مرخّصة، وجميع العقود والتأشيرات تُوثّق رسمياً عبر مساند وأبشر، مع شفافيةٍ كاملة في التكاليف.</p></div></div>
+    <div class="qa reveal"><button class="qa__q">ماذا لو لم يناسبني العامل بعد الوصول؟<span class="pm">+</span></button><div class="qa__a"><p>نوفّر فترة ضمانٍ بعد الاستلام مع حق الاستبدال وفق الأنظمة المعتمدة، حرصاً على رضاك التام.</p></div></div>
+    <div class="qa reveal"><button class="qa__q">كيف أبدأ طلبي؟<span class="pm">+</span></button><div class="qa__a"><p>الأسهل عبر واتساب — راسلنا على ٠٥٠٠٠٧٤٥٩٥ أو اتصل على ٩٢٠٠٠٩٩١٠، وسيتولّى فريقنا مساعدتك خطوةً بخطوة.</p></div></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta reveal">
+  <div class="cta__bg"><img src="assets/img/cta.jpg" alt=""></div>
+  <div class="cta__in">
+    <h2>جاهز تبدأ؟ بيتك يستحق الأفضل</h2>
+    <p>تواصل معنا الآن ودع فريق بلا حدود يتولّى كل التفاصيل — بسرعةٍ وثقةٍ بلا حدود.</p>
+    <div class="cta__row">
+      <a class="btn btn--gold" href="https://wa.me/966500074595" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg> راسلنا على واتساب</a>
+      <a class="btn btn--ghostlight" href="tel:920009910">اتصل: ٩٢٠٠٠٩٩١٠</a>
+    </div>
+  </div>
+</div></div></section>
+
+<!-- FOOTER -->
+<footer class="ft"><div class="wrap">
+  <div class="ft__grid">
+    <div>
+      <a class="brand" href="#top"><span class="logo"><svg viewBox="0 0 200 100"><path d="M50,50 C50,22 90,22 100,50 C110,78 150,78 150,50 C150,22 110,22 100,50 C90,78 50,78 50,50 Z"/></svg></span><span><b>بلا حدود</b><small>للاستقدام</small></span></a>
+      <p>شركةٌ سعودية مرخّصة لاستقدام العمالة المنزلية من حول العالم. معنا، بيتك في أيدٍ أمينة.</p>
+    </div>
+    <div><h4>روابط</h4><a href="#services">خدماتنا</a><a href="#workers">الكفاءات</a><a href="#countries">الجنسيات</a><a href="#faq">الأسئلة</a></div>
+    <div><h4>خدماتنا</h4><a href="https://wa.me/966500074595">الاستقدام</a><a href="https://wa.me/966500074595">نقل الخدمات</a><a href="https://wa.me/966500074595">التأجير</a></div>
+    <div class="ft__c"><h4>تواصل معنا</h4>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> الرياض · حي التعاون · شارع عثمان بن عفان</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> <span class="num" dir="ltr">920009910</span> · <span class="num" dir="ltr">0500074595</span></div>
+    </div>
+  </div>
+  <div class="ft__bot"><span>© <span class="num">٢٠٢٦</span> شركة بلا حدود للاستقدام — جميع الحقوق محفوظة</span><span>الصور المعروضة توضيحية</span></div>
+</div></footer>
+
+<a class="fab" href="https://wa.me/966500074595" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.319l-.999 3.648 3.909-1.266z"/></svg></a>
+
+<script>
+const toAr=s=>String(s).replace(/[0-9]/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]).replace('.','٫');
+const hdr=document.getElementById('hdr');
+function onScroll(){hdr.classList.toggle('stuck',scrollY>20);
+  document.querySelectorAll('[data-par]').forEach(el=>el.style.transform='translateY('+(scrollY*el.dataset.par)+'px)');}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+function countUp(s){const t=parseFloat(s.dataset.count),d=+(s.dataset.dec||0);let st=null;
+  (function step(n){if(!st)st=n;const p=Math.min((n-st)/1400,1),e=1-Math.pow(1-p,3);s.textContent=toAr((t*e).toFixed(d));if(p<1)requestAnimationFrame(step)})(performance.now())}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+document.querySelectorAll('.qa__q').forEach(q=>q.onclick=()=>{const a=q.closest('.qa'),b=a.querySelector('.qa__a'),o=a.classList.toggle('open');b.style.maxHeight=o?b.scrollHeight+'px':0});
+const mnav=document.getElementById('mnav');
+document.getElementById('burger').onclick=()=>mnav.classList.add('open');
+document.getElementById('mnavX').onclick=()=>mnav.classList.remove('open');
+mnav.onclick=e=>{if(e.target===mnav||e.target.tagName==='A')mnav.classList.remove('open')};
+</script>
+</body></html>
