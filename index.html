@@ -12,23 +12,26 @@
 <meta name="description" content="شركة بلا حدود للاستقدام — نخبة الكفاءات المنزلية من حول العالم، بثقةٍ وسرعةٍ وتوثيقٍ كامل عبر مساند. معنا، بيتك في أيدٍ أمينة.">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 <style>
 :root{
-  --paper:#faf7f1;--paper2:#f2ece0;--surface:#ffffff;--dark:#1b1813;--dark2:#262119;
-  --ink:#1d1a15;--ink2:#574f45;--ink3:#8d8478;
-  --gold:#b6883c;--gold2:#9a7330;--gold-soft:#f1e7cf;
-  --line:#e8e0d1;--wa:#1fab57;
-  --display:'El Messiri',serif;--body:'Tajawal',sans-serif;--maxw:1200px;
-  --r:14px;--r-lg:22px;--r-xl:30px;--pill:999px;
-  --sh-1:0 6px 22px -10px rgba(29,26,21,.16);--sh-2:0 30px 70px -26px rgba(29,26,21,.36);
+  /* Theme aligned to tamkeenhr.sa: warm off-white base, bright cyan brand, Almarai, white pill CTAs */
+  --paper:#fefbf5;--paper2:#f4f0e8;--surface:#ffffff;--dark:#12242a;--dark2:#0e1c21;
+  --ink:#14201f;--ink2:#4f5a58;--ink3:#8a938f;
+  /* brand accent = tamkeen cyan (replaces the old gold); "gold" tokens kept as names, now cyan */
+  --gold:#49cae4;--gold2:#28b2cf;--gold-soft:#e4f7fb;
+  --brand:#49cae4;--brand-2:#28b2cf;--brand-soft:#e4f7fb;
+  --line:#ece7db;--wa:#1fab57;
+  --display:'Almarai',sans-serif;--body:'Almarai',sans-serif;--maxw:1200px;
+  --r:14px;--r-lg:22px;--r-xl:34px;--pill:999px;
+  --sh-1:0 6px 22px -10px rgba(20,32,31,.14);--sh-2:0 30px 70px -26px rgba(20,32,31,.3);
   --ease:cubic-bezier(.2,.7,.2,1);--spring:cubic-bezier(.34,1.4,.64,1);
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.22;margin:0;color:var(--ink)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.25;margin:0;color:var(--ink)}
 p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:2}
 .num{font-feature-settings:"tnum"}
@@ -36,17 +39,20 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;padding:14px 26px;border-radius:var(--pill);cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--spring),box-shadow .25s,background .25s,color .25s;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .btn--dark{background:var(--ink);color:var(--paper)}.btn--dark:hover{background:#000}
-.btn--gold{background:linear-gradient(135deg,#c79a48,var(--gold2));color:#fff;box-shadow:0 12px 30px -12px rgba(154,115,48,.5)}
-.btn--out{background:transparent;border-color:var(--line);color:var(--ink)}.btn--out:hover{border-color:var(--gold);color:var(--gold2);background:#fff}
+/* PRIMARY = white pill (tamkeen style; "gold made white"). Dark text, cyan icon, soft shadow. */
+.btn--gold{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:0 12px 30px -14px rgba(20,32,31,.28)}
+.btn--gold:hover{color:var(--brand-2);box-shadow:var(--sh-2)}
+.btn--gold .ico{color:var(--brand-2)}
+.btn--out{background:transparent;border-color:var(--line);color:var(--ink)}.btn--out:hover{border-color:var(--brand);color:var(--brand-2);background:#fff}
 .btn--light{background:#fff;color:var(--ink);box-shadow:var(--sh-1)}
 .btn--ghostlight{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35);backdrop-filter:blur(6px)}
 .btn .ico{width:18px;height:18px}
 /* header */
 .hdr{position:sticky;top:0;z-index:40;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
-.hdr.stuck{background:rgba(250,247,241,.9);backdrop-filter:saturate(1.4) blur(14px);border-color:var(--line);box-shadow:var(--sh-1)}
+.hdr.stuck{background:rgba(254,251,245,.9);backdrop-filter:saturate(1.4) blur(14px);border-color:var(--line);box-shadow:var(--sh-1)}
 .hdr__in{display:flex;align-items:center;gap:18px;height:76px}
 .brand{display:flex;align-items:center;gap:11px}
-.brand .logo{width:44px;height:44px;border-radius:13px;flex:none;display:grid;place-items:center;background:linear-gradient(140deg,#c79a48,var(--gold2));box-shadow:var(--sh-1)}
+.brand .logo{width:44px;height:44px;border-radius:13px;flex:none;display:grid;place-items:center;background:linear-gradient(140deg,var(--brand),var(--brand-2));box-shadow:var(--sh-1)}
 .brand .logo svg{width:28px;height:28px;overflow:visible}.brand .logo svg path{fill:none;stroke:#fff;stroke-width:13;stroke-linecap:round}
 .brand b{font-family:var(--display);font-weight:700;font-size:20px;display:block;line-height:1.1}
 .brand small{font-size:11.5px;color:var(--ink3);letter-spacing:.05em}
@@ -58,31 +64,26 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 .burger svg{width:22px;height:22px}
 @media(max-width:980px){.nav,.hdr__cta .btn--out{display:none}.burger{display:flex}}
 /* hero */
-.hero{padding:54px 0 70px;position:relative}
-.hero__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:var(--gold2);background:var(--gold-soft);padding:7px 15px;border-radius:var(--pill)}
-.eyebrow .st{color:var(--gold)}
-.hero h1{font-size:clamp(42px,6.2vw,72px);font-weight:700;letter-spacing:-.01em;margin:22px 0 0}
-.hero h1 .u{position:relative;white-space:nowrap}
-.hero h1 .u::after{content:"";position:absolute;inset-inline:-2px;bottom:6px;height:12px;background:var(--gold-soft);z-index:-1;border-radius:6px}
-.hero__lead{font-size:19.5px;color:var(--ink2);max-width:44ch;margin-top:22px}
-.hero__cta{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
-.hero__trust{display:flex;gap:14px;align-items:center;margin-top:28px;flex-wrap:wrap;color:var(--ink2);font-size:14.5px}
-.hero__trust b{color:var(--ink)}
-.hero__trust .av{display:flex}.hero__trust .av img{width:36px;height:36px;border-radius:50%;border:2px solid var(--paper);object-fit:cover;margin-inline-start:-10px}
-/* hero visual */
-.hero__visual{position:relative}
-.hero__photo{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-2);aspect-ratio:4/4.4;background:var(--paper2)}
-.hero__photo img{width:100%;height:100%;object-fit:cover}
-.hero__chip{position:absolute;background:#fff;border-radius:18px;box-shadow:var(--sh-2);padding:14px 18px;display:flex;align-items:center;gap:12px}
-.hero__chip.c1{inset-block-start:24px;inset-inline-start:-26px}
-.hero__chip.c2{inset-block-end:26px;inset-inline-end:-22px;flex-direction:column;align-items:flex-start;gap:3px}
-.hero__chip .ring{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--gold-soft);color:var(--gold2);flex:none}
-.hero__chip .ring svg{width:22px;height:22px}
-.hero__chip .v{font-family:var(--display);font-weight:700;font-size:22px;line-height:1}
-.hero__chip .l{font-size:12.5px;color:var(--ink3)}
-.hero__chip .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
-@media(max-width:880px){.hero__grid{grid-template-columns:1fr;gap:34px}.hero__chip.c1{inset-inline-start:10px}.hero__chip.c2{inset-inline-end:10px}}
+/* hero — tamkeen-style rounded photo-card with overlay + centered white content */
+.hero{padding:30px 0 56px;position:relative}
+.hero-card{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-2);min-height:520px;display:grid;place-items:center;isolation:isolate}
+.hero-card__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}
+.hero-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,28,33,.5),rgba(15,28,33,.74))}
+.hero-card__content{text-align:center;color:#fff;max-width:780px;padding:76px 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:700;border-radius:var(--pill);padding:8px 16px}
+.hero-card .eyebrow{color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+.eyebrow .st{color:var(--brand)}
+.hero-card h1{color:#fff;font-size:clamp(38px,6vw,66px);font-weight:800;letter-spacing:-.01em;margin:22px 0 0;text-shadow:0 2px 26px rgba(0,0,0,.28)}
+.hero-card h1 .u{color:var(--brand)}
+.hero-card__lead{font-size:19px;color:rgba(255,255,255,.92);max-width:54ch;margin:20px auto 0}
+.hero__cta{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+/* trust badge chips under the hero card */
+.hero-badges{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.badge-chip{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:var(--pill);padding:9px 16px;font-size:14px;color:var(--ink2);font-weight:600;box-shadow:var(--sh-1)}
+.badge-chip svg{width:17px;height:17px;color:var(--brand-2)}
+.badge-chip .stars{color:var(--brand);font-size:12px;letter-spacing:1px}
+.badge-chip .av{display:flex}.badge-chip .av img{width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-inline-start:-8px}
+@media(max-width:700px){.hero-card{min-height:440px}.hero-card__content{padding:52px 20px}}
 /* trust strip */
 .logos{border-block:1px solid var(--line);background:var(--surface)}
 .logos__in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;flex-wrap:wrap}
@@ -147,7 +148,7 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 .how{background:var(--dark);color:#efe7d8;position:relative;overflow:hidden}
 .how .kick{color:var(--gold)}.how h2{color:#fff}.how .sub{color:#bdb3a2}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;margin-top:14px}
-.step__n{font-family:var(--display);font-weight:700;font-size:20px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#c79a48,var(--gold2));color:#fff;margin-bottom:18px;box-shadow:0 10px 24px -10px rgba(154,115,48,.6)}
+.step__n{font-family:var(--display);font-weight:800;font-size:20px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;margin-bottom:18px;box-shadow:0 10px 24px -10px rgba(40,178,207,.55)}
 .step h3{font-size:20px;color:#fff;margin-bottom:7px}.step p{color:#bdb3a2;font-size:15.5px}
 .steps__line{position:absolute;top:27px;inset-inline:7%;height:2px;background:repeating-linear-gradient(90deg,rgba(182,136,60,.6) 0 8px,transparent 8px 18px)}
 @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}.steps__line{display:none}}
@@ -177,7 +178,7 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 /* CTA image band */
 .cta{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-2)}
 .cta__bg{position:absolute;inset:0;z-index:0}.cta__bg img{width:100%;height:100%;object-fit:cover}
-.cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,17,13,.86),rgba(20,17,13,.55))}
+.cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,28,33,.86),rgba(15,28,33,.55))}
 .cta__in{position:relative;z-index:2;padding:72px 44px;text-align:center;color:#fff}
 .cta__in h2{color:#fff;font-size:clamp(30px,4.6vw,48px)}
 .cta__in p{color:rgba(255,255,255,.9);font-size:19px;margin:15px auto 30px;max-width:52ch}
@@ -200,7 +201,7 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 .js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
 /* mobile drawer */
-.mnav{position:fixed;inset:0;z-index:60;background:rgba(20,17,13,.5);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:.3s}
+.mnav{position:fixed;inset:0;z-index:60;background:rgba(15,28,33,.5);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:.3s}
 .mnav.open{opacity:1;visibility:visible}
 .mnav__p{position:absolute;inset-block:0;inset-inline-end:0;width:min(320px,86vw);background:var(--paper);padding:26px;display:flex;flex-direction:column;gap:6px;transform:translateX(100%);transition:transform .35s var(--spring)}
 .mnav.open .mnav__p{transform:none}
@@ -239,38 +240,27 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 
 <a id="top"></a>
 <!-- HERO -->
-<section class="hero"><div class="wrap hero__grid">
-  <div class="hero__copy">
-    <span class="eyebrow reveal"><span class="st">★★★★★</span> الأعلى تقييماً — أكثر من <span class="num">١٨٠</span> عميل</span>
-    <h1 class="reveal d1">معنا، بيتك في <span class="u">أيدٍ أمينة</span></h1>
-    <p class="hero__lead reveal d2">نختار لك نخبة الكفاءات المنزلية من حول العالم، ونتولّى كل إجراء بثقةٍ وعنايةٍ بلا حدود — وبتوثيقٍ كامل عبر مساند، من أول رسالة حتى استلام العامل عند بابك.</p>
-    <div class="hero__cta reveal d3">
-      <a class="btn btn--gold" href="https://wa.me/966500074595" target="_blank" rel="noopener">
-        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
-        ابدأ الآن عبر واتساب
-      </a>
-      <a class="btn btn--out" href="#workers">استعرض الكفاءات</a>
-    </div>
-    <div class="hero__trust reveal d4">
-      <span class="av">
-        <img src="assets/img/av-1.jpg" alt="">
-        <img src="assets/img/w-et.jpg" alt="">
-        <img src="assets/img/w-lk.jpg" alt="">
-      </span>
-      <span><b>١٨٠+ عائلة سعودية</b> تثق بنا — مرخّصون ومتكاملون مع مساند</span>
+<section class="hero"><div class="wrap">
+  <div class="hero-card reveal">
+    <img class="hero-card__bg" src="assets/img/hero.jpg" alt="عناية منزلية موثوقة">
+    <div class="hero-card__content">
+      <span class="eyebrow"><span class="st">★★★★★</span> الأعلى تقييماً — أكثر من <span class="num">١٨٠</span> عميل</span>
+      <h1>معنا، بيتك في <span class="u">أيدٍ أمينة</span></h1>
+      <p class="hero-card__lead">نختار لك نخبة الكفاءات المنزلية من حول العالم، ونتولّى كل إجراء بثقةٍ وعنايةٍ بلا حدود — وبتوثيقٍ كامل عبر مساند، من أول رسالة حتى استلام العامل عند بابك.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="https://wa.me/966500074595" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          ابدأ الآن عبر واتساب
+        </a>
+        <a class="btn btn--ghostlight" href="#workers">استعرض الكفاءات</a>
+      </div>
     </div>
   </div>
-  <div class="hero__visual reveal d2">
-    <div class="hero__photo" data-par="-0.04">
-      <img src="assets/img/hero.jpg" alt="عناية منزلية موثوقة">
-    </div>
-    <div class="hero__chip c1">
-      <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <div><div class="v">موثّق</div><div class="l">عبر مساند وأبشر</div></div>
-    </div>
-    <div class="hero__chip c2">
-      <div class="stars">★★★★★</div><div class="v num">٤٫٩ / ٥</div><div class="l">رضا العملاء</div>
-    </div>
+  <div class="hero-badges reveal d1">
+    <span class="badge-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> مرخّصة من وزارة الموارد البشرية</span>
+    <span class="badge-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v7l9 4 9-4V7"/></svg> متكاملة مع مساند</span>
+    <span class="badge-chip"><span class="av"><img src="assets/img/av-1.jpg" alt=""><img src="assets/img/w-et.jpg" alt=""><img src="assets/img/w-lk.jpg" alt=""></span> <span class="num">١٨٠+</span> عائلة تثق بنا</span>
+    <span class="badge-chip"><span class="stars">★★★★★</span> <span class="num">٤٫٩/٥</span> رضا العملاء</span>
   </div>
 </div></section>
 
