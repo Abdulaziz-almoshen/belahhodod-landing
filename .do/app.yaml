@@ -1,0 +1,17 @@
+# DigitalOcean App Platform — spec for the بلا حدود landing page (STATIC SITE).
+# Separate DO app, isolated from the product platform. Auto-deploys from GitHub on push.
+# Use in the DO dashboard (Create App → it reads this), or: doctl apps create --spec .do/app.yaml
+name: belahhodod-landing
+region: fra   # Frankfurt — closest DO region to KSA (marketing site holds no PII; PDPL residency
+              # only constrains the PRODUCT, which is a separate decision — do NOT infer DO for it).
+static_sites:
+  - name: landing
+    github:
+      repo: Abdulaziz-almoshen/belahhodod-landing
+      branch: main
+      deploy_on_push: true      # every git push → automatic redeploy
+    source_dir: /               # plain static site, no build step
+    index_document: index.html
+    catchall_document: index.html   # single-page: any path falls back to the landing
+    # Custom domain is added in the dashboard (Settings → Domains) after first deploy;
+    # DO issues the TLS cert automatically. Add the domain there, then set DNS per DEPLOY-DIGITALOCEAN.md.
