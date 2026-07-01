@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--
-  بلا حدود للاستقدام — landing page, PHOTO-FORWARD redesign.
-  Neutral premium UI (off-white + charcoal + champagne gold); the PHOTOGRAPHY carries the warmth.
+  بلا حدود للاستقدام — landing page, PHOTO-FORWARD.
+  Theme aligned to tamkeenhr.sa: warm off-white base + bright cyan brand (#49cae4) + Almarai font
+  + white pill CTAs + rounded hero photo-card with overlay. Photography carries the warmth.
   Images are licensed-free stock (Unsplash/Pexels) as PLACEHOLDERS — swap for the office's own
   photos of real workers / families / homes. Self-contained, no build step, Arabic-RTL.
 -->
@@ -135,6 +136,49 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
 .stars{color:var(--gold);letter-spacing:1px;font-size:13px}
 @media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.wgrid{grid-template-columns:1fr}}
+/* sample CV cards (document-style previews) */
+.cvs{background:var(--paper2)}
+.cv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cv-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh-1);cursor:pointer;transition:transform .35s var(--spring),box-shadow .35s}
+.cv-card:hover{transform:translateY(-8px)}
+.cv-card:hover{box-shadow:var(--sh-2)}
+.cv-card__bar{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+.cv-card__brand{display:flex;align-items:center;gap:6px;font-weight:800;font-size:15px}.cv-card__brand .inf{font-size:18px}
+.cv-card__tag{font-size:11.5px;background:rgba(255,255,255,.22);padding:3px 9px;border-radius:99px}
+.cv-card__body{display:flex;gap:13px;padding:15px}
+.cv-card__photo{width:76px;height:94px;border-radius:10px;overflow:hidden;flex:none;position:relative;background:var(--paper2);border:1px solid var(--line)}
+.cv-card__photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.cv-card__flag{position:absolute;inset-block-start:6px;inset-inline-end:6px;width:22px;height:16px;border-radius:3px;background-size:cover!important;box-shadow:0 2px 6px rgba(0,0,0,.3);border:1px solid #fff}
+.cv-card__info{flex:1;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.cv-row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2);border-bottom:1px dashed var(--line);padding:5px 0}
+.cv-row:last-child{border-bottom:0}.cv-row b{color:var(--ink);font-weight:700}
+.cv-card__skills{display:flex;flex-wrap:wrap;gap:6px;padding:0 15px 13px}
+.cv-skill{font-size:11px;background:var(--brand-soft);color:var(--brand-2);font-weight:700;padding:3px 9px;border-radius:99px}
+.cv-card__foot{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-top:1px solid var(--line);background:var(--paper)}
+.cv-stamp{font-size:10.5px;font-weight:800;color:#b26a00;background:#fff3d9;border:1px solid #ffe1a6;padding:2px 8px;border-radius:6px;transform:rotate(-3deg)}
+.cv-view{font-size:12.5px;font-weight:800;color:var(--brand-2)}
+@media(max-width:900px){.cv-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cv-grid{grid-template-columns:1fr}}
+/* CV preview modal */
+.cvm{position:fixed;inset:0;z-index:80;background:rgba(15,28,33,.62);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+.cvm.open{display:flex}
+.cvm__doc{background:#fff;border-radius:18px;max-width:540px;width:100%;max-height:92vh;overflow:auto;box-shadow:var(--sh-2)}
+.cvm__bar{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;position:sticky;top:0}
+.cvm__bar b{font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px}
+.cvm__x{background:rgba(255,255,255,.22);border:0;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1}
+.cvm__body{padding:22px}
+.cvm__top{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.cvm__photo{width:104px;height:126px;border-radius:12px;overflow:hidden;flex:none;border:1px solid var(--line);position:relative}
+.cvm__photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cvm__photo .cv-card__flag{width:26px;height:19px}
+.cvm__name{font-family:var(--display);font-weight:800;font-size:22px}
+.cvm__subt{color:var(--ink3);font-size:14px;margin-top:2px}
+.cvm .kv2{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.cvm .kv2 .r{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px solid var(--line)}
+.cvm .kv2 .r span{color:var(--ink3)}.cvm .kv2 .r b{color:var(--ink);font-weight:700}
+.cvm__skills{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.cvm__note{margin-top:16px;font-size:12.5px;color:var(--ink3);background:var(--paper2);border-radius:10px;padding:11px 14px}
+.cvm__foot{padding:15px 22px;border-top:1px solid var(--line);position:sticky;bottom:0;background:#fff}
 /* countries */
 .cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .country{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 12px;text-align:center;transition:transform .3s var(--spring),box-shadow .3s,border-color .3s}
@@ -327,6 +371,43 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
   <div style="text-align:center;margin-top:24px" class="reveal"><a class="btn btn--dark" href="https://wa.me/966500074595" target="_blank" rel="noopener">اطلب الاطلاع على السير الذاتية</a></div>
 </div></section>
 
+<!-- SAMPLE CVs -->
+<section class="sec cvs" id="cvs"><div class="wrap">
+  <div class="sec__head center reveal"><span class="kick">سيرٌ ذاتية موثّقة</span><h2>سيرةٌ ذاتية مفصّلة لكل كفاءة</h2><p class="sub">لكل كفاءة سيرة ذاتية كاملة — صورة، بيانات، مهارات، وخبرة موثّقة — لتختار بثقة. هذه نماذج توضيحية للشكل.</p></div>
+  <div class="cv-grid">
+    <article class="cv-card reveal d1" onclick="openCv(0)">
+      <div class="cv-card__bar"><span class="cv-card__brand"><span class="inf">∞</span> بلا حدود</span><span class="cv-card__tag">سيرة ذاتية</span></div>
+      <div class="cv-card__body"><div class="cv-card__photo"><img src="assets/img/w-ph.jpg" alt="عاملة منزلية"><span class="cv-card__flag fi fi-ph"></span></div>
+        <div class="cv-card__info"><div class="cv-row"><span>المهنة</span><b>عاملة منزلية</b></div><div class="cv-row"><span>الجنسية</span><b>الفلبين</b></div><div class="cv-row"><span>العمر</span><b class="num">٢٩</b></div><div class="cv-row"><span>الخبرة</span><b>٤ سنوات</b></div></div></div>
+      <div class="cv-card__skills"><span class="cv-skill">تنظيف</span><span class="cv-skill">غسل</span><span class="cv-skill">طبخ</span><span class="cv-skill">جليس أطفال</span></div>
+      <div class="cv-card__foot"><span class="cv-stamp">نموذج توضيحي</span><span class="cv-view">معاينة ↗</span></div>
+    </article>
+    <article class="cv-card reveal d2" onclick="openCv(1)">
+      <div class="cv-card__bar"><span class="cv-card__brand"><span class="inf">∞</span> بلا حدود</span><span class="cv-card__tag">سيرة ذاتية</span></div>
+      <div class="cv-card__body"><div class="cv-card__photo"><img src="assets/img/w-et.jpg" alt="مربية أطفال"><span class="cv-card__flag fi fi-et"></span></div>
+        <div class="cv-card__info"><div class="cv-row"><span>المهنة</span><b>مربية أطفال</b></div><div class="cv-row"><span>الجنسية</span><b>إثيوبيا</b></div><div class="cv-row"><span>العمر</span><b class="num">٢٥</b></div><div class="cv-row"><span>الخبرة</span><b>سنتان</b></div></div></div>
+      <div class="cv-card__skills"><span class="cv-skill">رعاية أطفال</span><span class="cv-skill">تنظيف</span><span class="cv-skill">غسل</span></div>
+      <div class="cv-card__foot"><span class="cv-stamp">نموذج توضيحي</span><span class="cv-view">معاينة ↗</span></div>
+    </article>
+    <article class="cv-card reveal d3" onclick="openCv(2)">
+      <div class="cv-card__bar"><span class="cv-card__brand"><span class="inf">∞</span> بلا حدود</span><span class="cv-card__tag">سيرة ذاتية</span></div>
+      <div class="cv-card__body"><div class="cv-card__photo"><img src="assets/img/w-lk.jpg" alt="عاملة منزلية"><span class="cv-card__flag fi fi-lk"></span></div>
+        <div class="cv-card__info"><div class="cv-row"><span>المهنة</span><b>عاملة منزلية</b></div><div class="cv-row"><span>الجنسية</span><b>سريلانكا</b></div><div class="cv-row"><span>العمر</span><b class="num">٢٧</b></div><div class="cv-row"><span>الخبرة</span><b>٣ سنوات</b></div></div></div>
+      <div class="cv-card__skills"><span class="cv-skill">طبخ</span><span class="cv-skill">تنظيف</span><span class="cv-skill">غسل</span></div>
+      <div class="cv-card__foot"><span class="cv-stamp">نموذج توضيحي</span><span class="cv-view">معاينة ↗</span></div>
+    </article>
+    <article class="cv-card reveal d4" onclick="openCv(3)">
+      <div class="cv-card__bar"><span class="cv-card__brand"><span class="inf">∞</span> بلا حدود</span><span class="cv-card__tag">سيرة ذاتية</span></div>
+      <div class="cv-card__body"><div class="cv-card__photo"><img src="assets/img/w-in.jpg" alt="سائق خاص"><span class="cv-card__flag fi fi-in"></span></div>
+        <div class="cv-card__info"><div class="cv-row"><span>المهنة</span><b>سائق خاص</b></div><div class="cv-row"><span>الجنسية</span><b>الهند</b></div><div class="cv-row"><span>العمر</span><b class="num">٣٤</b></div><div class="cv-row"><span>الخبرة</span><b>٦ سنوات</b></div></div></div>
+      <div class="cv-card__skills"><span class="cv-skill">قيادة</span><span class="cv-skill">رخصة سعودية</span><span class="cv-skill">صيانة بسيطة</span></div>
+      <div class="cv-card__foot"><span class="cv-stamp">نموذج توضيحي</span><span class="cv-view">معاينة ↗</span></div>
+    </article>
+  </div>
+  <p style="text-align:center;color:var(--ink3);font-size:13px;margin-top:16px" class="reveal">🔒 حمايةً لخصوصية الكفاءات، لا نعرض أرقام الجوازات أو الهواتف علناً — تصلك السيرة الكاملة عبر واتساب.</p>
+  <div style="text-align:center;margin-top:22px" class="reveal"><a class="btn btn--gold" href="https://wa.me/966500074595" target="_blank" rel="noopener">اطلب السير الذاتية الكاملة عبر واتساب</a></div>
+</div></section>
+
 <!-- COUNTRIES -->
 <section class="sec" id="countries"><div class="wrap">
   <div class="sec__head center reveal"><span class="kick" style="justify-content:center">جنسيات متنوعة</span><h2>من العالم إلى بيتك</h2><p class="sub">نخبة الكفاءات من الدول المصدّرة للعمالة المنزلية، نختارها لتناسب بيتك.</p></div>
@@ -409,6 +490,23 @@ p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%
   <div class="ft__bot"><span>© <span class="num">٢٠٢٦</span> شركة بلا حدود للاستقدام — جميع الحقوق محفوظة</span><span>الصور المعروضة توضيحية</span></div>
 </div></footer>
 
+<!-- CV preview modal -->
+<div class="cvm" id="cvm">
+  <div class="cvm__doc">
+    <div class="cvm__bar"><b><span style="font-size:22px">∞</span> سيرة ذاتية · بلا حدود</b><button class="cvm__x" id="cvmX" aria-label="إغلاق">×</button></div>
+    <div class="cvm__body">
+      <div class="cvm__top">
+        <div class="cvm__photo"><img id="cvmImg" src="" alt=""><span class="cv-card__flag" id="cvmFlag"></span></div>
+        <div><div class="cvm__name" id="cvmProf">—</div><div class="cvm__subt" id="cvmNat">—</div></div>
+      </div>
+      <div class="kv2" id="cvmKv"></div>
+      <div class="cvm__skills" id="cvmSkills"></div>
+      <div class="cvm__note">🔒 نموذج توضيحي لشكل السيرة الذاتية. البيانات الحساسة (رقم الجواز، الهاتف، صورة الجواز) لا تُعرض علناً حمايةً للخصوصية، وتصلك في السيرة الكاملة عبر واتساب.</div>
+    </div>
+    <div class="cvm__foot"><a class="btn btn--gold" style="width:100%;justify-content:center" href="https://wa.me/966500074595" target="_blank" rel="noopener">اطلب السيرة الكاملة عبر واتساب</a></div>
+  </div>
+</div>
+
 <a class="fab" href="https://wa.me/966500074595" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.319l-.999 3.648 3.909-1.266z"/></svg></a>
 
 <script>
@@ -426,5 +524,25 @@ const mnav=document.getElementById('mnav');
 document.getElementById('burger').onclick=()=>mnav.classList.add('open');
 document.getElementById('mnavX').onclick=()=>mnav.classList.remove('open');
 mnav.onclick=e=>{if(e.target===mnav||e.target.tagName==='A')mnav.classList.remove('open')};
+// CV preview modal
+const CVS=[
+ {img:'assets/img/w-ph.jpg',flag:'ph',prof:'عاملة منزلية',nat:'الفلبين',kv:{'العمر':'٢٩ سنة','الحالة':'عزباء','الديانة':'مسيحية','اللغة':'إنجليزي جيد','الخبرة':'٤ سنوات','مدة العقد':'سنتان'},skills:['تنظيف','غسل','طبخ','جليس أطفال','كي']},
+ {img:'assets/img/w-et.jpg',flag:'et',prof:'مربية أطفال',nat:'إثيوبيا',kv:{'العمر':'٢٥ سنة','الحالة':'عزباء','الديانة':'مسلمة','اللغة':'عربي بسيط','الخبرة':'سنتان','مدة العقد':'سنتان'},skills:['رعاية أطفال','تنظيف','غسل']},
+ {img:'assets/img/w-lk.jpg',flag:'lk',prof:'عاملة منزلية',nat:'سريلانكا',kv:{'العمر':'٢٧ سنة','الحالة':'متزوجة','الديانة':'—','اللغة':'إنجليزي متوسط','الخبرة':'٣ سنوات','مدة العقد':'سنتان'},skills:['طبخ ممتاز','تنظيف','غسل','كي']},
+ {img:'assets/img/w-in.jpg',flag:'in',prof:'سائق خاص',nat:'الهند',kv:{'العمر':'٣٤ سنة','الحالة':'متزوج','الرخصة':'سعودية سارية','اللغة':'إنجليزي جيد','الخبرة':'٦ سنوات','مدة العقد':'سنتان'},skills:['قيادة','رخصة سعودية','صيانة بسيطة']}
+];
+const cvm=document.getElementById('cvm');
+function openCv(i){const c=CVS[i];if(!c)return;
+ document.getElementById('cvmImg').src=c.img;
+ document.getElementById('cvmFlag').className='cv-card__flag fi fi-'+c.flag;
+ document.getElementById('cvmProf').textContent=c.prof;
+ document.getElementById('cvmNat').textContent='الجنسية: '+c.nat;
+ document.getElementById('cvmKv').innerHTML=Object.entries(c.kv).map(([k,v])=>'<div class="r"><span>'+k+'</span><b>'+v+'</b></div>').join('');
+ document.getElementById('cvmSkills').innerHTML=c.skills.map(s=>'<span class="cv-skill">'+s+'</span>').join('');
+ cvm.classList.add('open');}
+function closeCv(){cvm.classList.remove('open');}
+document.getElementById('cvmX').onclick=closeCv;
+cvm.addEventListener('click',e=>{if(e.target===cvm)closeCv();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCv();});
 </script>
 </body></html>
